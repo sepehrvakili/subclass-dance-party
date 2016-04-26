@@ -4,7 +4,6 @@ var inherit = function(child, parent) {
   child.prototype = parentCopy;
 };
 
-
 // Creates and returns a new dancer object that can step
 var MakeDancer = function(top, left, timeBetweenSteps) {
   // use jQuery to create an HTML <span> tag
@@ -12,11 +11,7 @@ var MakeDancer = function(top, left, timeBetweenSteps) {
   this.timeBetweenSteps = timeBetweenSteps;
 
   MakeDancer.prototype.step.call(this);
-  
-  // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
-  // this one sets the position to some random default point within the body
   MakeDancer.prototype.setPosition.call(this, top, left);
-  // this.setPosition(top, left);
 };
 
 MakeDancer.prototype.step = function() {
@@ -37,3 +32,15 @@ MakeDancer.prototype.setPosition = function(top, left) {
   };
   this.$node.css(styleSettings);
 };
+
+MakeDancer.prototype.lineUp = function(top, left) {
+  var styleSettings = {
+    top: top,
+    left: left
+  };
+  this.$node.css(styleSettings);
+  // this.$node.toggleClass('lineUp');
+};
+
+
+
