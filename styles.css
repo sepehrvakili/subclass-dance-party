@@ -5,12 +5,14 @@ body{
   margin: 0px;
   background-image: url("assets/saturday-night-bg.jpg");
   background-color:#444;
+  background-repeat: no-repeat;
   font-size: 18px;
+  display: inline-block;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addBlinkyDancerButton, 
+.title, .addBlinkyDancerButton,
 .addBouncyDancerButton, .addSlidyDancerButton, .lineUpButton {
   padding:5px 12px;
   float:right;
@@ -62,19 +64,19 @@ body, a:link, a:visited, a:active{
  -moz-animation: bounce 2s infinite;
  -o-animation: bounce 2s infinite;
 }
- 
+/*
 @-webkit-keyframes bounce {
- 0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);} 
+ 0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}
  40% {-webkit-transform: translateY(-30px);}
  60% {-webkit-transform: translateY(-15px);}
 }
- 
+
 @-moz-keyframes bounce {
  0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0);}
  40% {-moz-transform: translateY(-30px);}
  60% {-moz-transform: translateY(-15px);}
 }
- 
+
 @-o-keyframes bounce {
  0%, 20%, 50%, 80%, 100% {-o-transform: translateY(0);}
  40% {-o-transform: translateY(-30px);}
@@ -85,7 +87,16 @@ body, a:link, a:visited, a:active{
  40% {transform: translateY(-30px);}
  60% {transform: translateY(-15px);}
 }
-
+*/
 .bouncyMouseHover {
-  border-color: yellow !important;
+  border-color: yellow;
+}
+
+.interact {
+  border: 10px solid brown;
+}
+
+.dancer img {
+  width: 70px;
+  height: auto;
 }

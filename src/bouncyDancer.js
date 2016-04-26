@@ -1,4 +1,5 @@
 var MakeBouncyDancer = function(top, left, timeBetweenSteps) {
+  this.$node = $('<span class="dancer"><img src="assets/Dancing-Cat.gif"></span>');
   MakeDancer.call(this, top, left, timeBetweenSteps);
 };
 

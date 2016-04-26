@@ -1,4 +1,5 @@
 var MakeSlidyDancer = function(top, left, timeBetweenSteps) {
+  this.$node = $('<span class="dancer"><img src="assets/travolta-dance.gif"></span>');
   MakeDancer.call(this, top, left, timeBetweenSteps);
 };
 
@@ -20,10 +21,10 @@ MakeSlidyDancer.prototype.step = function() {
 
 // on click for interact dancers
 // iterate over the dancers array
-  // run the pathgorean theorm for 
+  // run the pathgorean theorm for
     // every dancer compared to every other dancer
     // if the distance is less than some value
-      // 
+      //
 
 
 // var getDistance = function(x1, y1, x2, y2) {

@@ -7,25 +7,20 @@ var inherit = function(child, parent) {
 // Creates and returns a new dancer object that can step
 var MakeDancer = function(top, left, timeBetweenSteps) {
   // use jQuery to create an HTML <span> tag
-  this.$node = $('<span class="dancer"></span>');
+  // this.$node = $('<span class="dancer"></span>');
   this.timeBetweenSteps = timeBetweenSteps;
   this.top = top;
   this.left = left;
 
   MakeDancer.prototype.step.call(this);
   MakeDancer.prototype.setPosition.call(this, top, left);
-  console.log(this.top, this.left);
 };
 
 MakeDancer.prototype.step = function() {
   // the basic dancer doesn't do anything interesting at all on each step,
   // it just schedules the next step
   var context = this;
-
   setTimeout(function() {
-    var posTop = context.$node.position().top;
-    var posLeft = context.$node.position().left;
-
     context.step();
   }, this.timeBetweenSteps);
 };
@@ -39,17 +34,3 @@ MakeDancer.prototype.setPosition = function(top, left) {
   };
   this.$node.css(styleSettings);
 };
-
-
-// MakeDancer.prototype.lineUp = function(top, left) {
-//   var styleSettings = {
-//     top: top,
-//     left: left
-//   };
-//   this.$node.css(styleSettings);
-  // this.$node.toggleClass('lineUp');
-// };
-
-
-
-

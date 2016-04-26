@@ -1,4 +1,5 @@
 var MakeBlinkyDancer = function(top, left, timeBetweenSteps) {
+  this.$node = $('<span class="dancer"><img src="assets/dog-dance.gif"></span>');
   MakeDancer.call(this, top, left, timeBetweenSteps);
 };
 
