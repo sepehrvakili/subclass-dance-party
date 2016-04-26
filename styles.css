@@ -85,3 +85,7 @@ body, a:link, a:visited, a:active{
  40% {transform: translateY(-30px);}
  60% {transform: translateY(-15px);}
 }
+
+.bouncyMouseHover {
+  border-color: yellow !important;
+}
