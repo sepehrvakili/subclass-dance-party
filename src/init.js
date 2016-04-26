@@ -33,16 +33,21 @@ $(document).ready(function() {
     var height = 800;
     var top = 40;
     window.dancers.forEach(function(dancer) {
-
-      dancer.setPosition(top, left);
-      dancer.position = dancer.$node.position();
-
+      dancer.$node.animate({left: left + 'px', top: top + 'px'}, 'slow');
       if ( top > height ) {
         top = 20;
         left = 450;
       }
       top += 150;
-      //console.log(dancer.position);
+    });
+  });
+
+  $('.shuffleButton').on('click', function(e) {
+    window.dancers.forEach(function(dancer) {
+      var top = $('body').height() * Math.random();
+      var left = $('body').width() * Math.random();
+      dancer.$node.animate({left: left + 'px', top: top + 'px'}, 'slow');
+
     });
   });
 
@@ -51,32 +56,30 @@ $(document).ready(function() {
   });
 
   $('body').on('click', '.dancer', function(e) {
-    console.log('has been clicked (outside keydown)');
-    $(this).addClass('move');
+    $(this).toggleClass('move');
+  });
 
-    $(this).keydown(function(key) {
-      console.log('clicked inside keydown');
-      switch(parseInt(key.which,10)) {
-        case 65:
-        case 37:
-          $('body').find('.move').animate({left: '-=10px'}, 'fast');
-          break;
-        case 83:
-        case 40:
-          $('body').find('.move').animate({bottom: '-=10px'}, 'fast');
-          break;
-        case 87:
-        case 38:
-          $('body').find('.move').animate({top: '-=10px'}, 'fast');
-          break;
-        case 68:
-        case 39:
-          $('body').find('.move').animate({left: '+=10px'}, 'fast');
-          break;
-        default:
-          break;
-      }
-    });
+  $(document).keydown(function(key) {
+    console.log('clicked inside keydown');
+    switch(parseInt(key.which,10)) {
+      case 65:
+      case 37:
+        $('body').find('.move').animate({left: '-=20px'}, 'fast');
+        break;
+      case 83:
+      case 40:
+        $('body').find('.move').animate({top: '+=20px'}, 'fast');
+        break;
+      case 87:
+      case 38:
+        $('body').find('.move').animate({top: '-=20px'}, 'fast');
+        break;
+      case 68:
+      case 39:
+        $('body').find('.move').animate({left: '+=20px'}, 'fast');
+        break;
+      default: return;
+    }
   });
 
   addDancerButton('.addBlinkyDancerButton', 'blinky', 'blinky-dancer-maker-function-name');
